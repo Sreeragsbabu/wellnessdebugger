@@ -18,7 +18,7 @@ describe('Register Controller', () => {
     name: 'John Doe',
     email: 'john@example.com',
     password: 'Password@123',
-    role: 'admin'
+    role: 'doctor'
   };
 
   describe('POST /register', () => {

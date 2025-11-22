@@ -13,5 +13,4 @@ router.get('/patients/doctor/:id', require("../routes/user/getAllPatients"));
 //get doctor patients
 router.get('/doctors/patients/:id', require("../routes/user/getDoctorPatients"));
 
-
 module.exports = router;

@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 
 const VitalsSchema = new mongoose.Schema({
+  patientId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+    index: true,
+  },
   height: {
     type: Number,
     min: 0,
@@ -33,4 +39,4 @@ const VitalsSchema = new mongoose.Schema({
   },
 });
 
-exports.Vitals = mongoose.model("Vitals", VitalsSchema);
+module.exports = mongoose.model("Vitals", VitalsSchema);
