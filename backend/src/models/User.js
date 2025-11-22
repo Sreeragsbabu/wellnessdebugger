@@ -29,18 +29,6 @@ const UserSchema = new mongoose.Schema({
     default: "patient",
   },
   
-  // Doctor-specific fields
-  doctorProfile: {
-    isActive: {
-      type: Boolean,
-      default: true,
-    },
-    specialities: [{
-      type: String,
-      trim: true,
-    }],
-  },
-  
   createdAt: {
     type: Date,
     default: Date.now,

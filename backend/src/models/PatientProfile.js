@@ -9,12 +9,17 @@ const PatientProfileSchema = new mongoose.Schema({
   },
   dateOfBirth: {
     type: Date,
-    required: true,
+    required: false,
   },
   gender: {
     type: String,
     required: true,
-    enum: ["male", "female", "other"],
+    enum: ["Male", "Female", "other"],
+  },
+  assignedDoctor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: false,
   },
   address: {
     street: String,
