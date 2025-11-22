@@ -26,6 +26,14 @@ class UserService {
     getAllPatients() {
         return User.find({ role: "patient" });
     }
+
+    getPatientById(id) {
+        return User.findById(id);
+    }
+
+    updatePatientById(id, data) {
+        return User.findByIdAndUpdate(id, data, { new: true });
+    }
 }
 
 module.exports = new UserService();
