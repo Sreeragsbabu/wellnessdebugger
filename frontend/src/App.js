@@ -4,6 +4,11 @@ import FormPage from './pages/formPage';
 import MainLayout from './layout/MainLayout';
 import LoginPage from './pages/LoginPage';
 import ProtectedRoute from './routes/ProtectedRoute';
+import './styles/Loginform.css'
+import LoginForm from './components/LoginForm'
+import ProviderDashboard from './components/provider-dashboard' 
+import PatientPortal from './components/patient-portal'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -11,7 +16,11 @@ function App() {
       <Routes>
         {/* Login Page (Public) */}
         <Route path="/" element={<LoginPage />} />
-
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        {/* The components the user is redirected to */}
+        <Route path="/provider-dashboard" element={<ProviderDashboard />} />
+        <Route path="/patient-portal" element={<PatientPortal />} />
         {/* Dashboard (Protected) */}
         <Route
           path="/dashboard"
