@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom'; // 1. Import the hook
+import { useNavigate } from 'react-router-dom'; // 1. Import the hook
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const LoginForm = () => {
@@ -57,11 +57,11 @@ const LoginForm = () => {
       
       // Call the success handler passed from the parent component
       //Optional: Redirect the user (requires react-router-dom setup)
-      // if (data.user.role === 'provider') {
-      //   navigate('/provider-dashboard');
-      // } else {
-      //   navigate('/patient-portal');
-      // }
+      if (data.user.role === 'doctor') {
+        navigate('/provider-dashboard');
+      } else {
+        navigate('/patient-portal');
+      }
 
     } catch (err) {
       // Catch network or processing errors
@@ -89,6 +89,9 @@ const LoginForm = () => {
             onChange={handleInputChange}/>
           </div>
           <button type="submit" className="btn btn-primary w-100 mb-3">Login</button>
+          <p className="text-center mt-3">
+          create have an account? <a href="/signup">Register here</a>
+        </p>
           {/* Display error message */}
           {error && <p className="error-message">{error}</p>}
         </form>

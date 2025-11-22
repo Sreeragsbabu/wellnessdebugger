@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
-const ProviderDashboard = () => {
+const PatientPortal = () => {
   // 1. Dummy State/Data Definition
   const [providerInfo] = useState({
-    name: "Dr. Evelyn Reed",
-    specialty: "Pediatrics",
-    clinic: "City Health Clinic",
+    name: "David",
+    preventive: "1 upcoming appointment",
+    tip: "drink water properly",
   });
 
   const [upcomingAppointments] = useState([
-    { id: 1, time: "9:00 AM", patient: "Mila Johnson", reason: "Annual Checkup" },
-    { id: 2, time: "10:30 AM", patient: "Liam Chen", reason: "Fever and Rash" },
-    { id: 3, time: "1:00 PM", patient: "Sofia Garcia", reason: "Vaccination" },
+    { id: 1, time: "22/11/2025 9:00 AM", doctor: "Mila Johnson", reason: "Annual Checkup" },
+    { id: 2, time: "6/11/2025 10:30 AM", doctor: "Liam Chen", reason: "Fever and Rash" },
+    { id: 3, time: "8/11/2025 1:00 PM", doctor: "Sofia Garcia", reason: "Vaccination" },
   ]);
 
   return (
@@ -23,13 +23,13 @@ const ProviderDashboard = () => {
         <div className="card-body">
           <h5 className="card-title">Welcome back, {providerInfo.name}</h5>
           <p className="card-text text-muted">
-            Specialty: **{providerInfo.specialty}** | Location: **{providerInfo.clinic}**
+            Preventive care reminders: **{providerInfo.preventive}** | Health tip of the day: **{providerInfo.tip}**
           </p>
         </div>
       </div>
 
       {/* Upcoming Appointments Section */}
-      <h2 className="mt-4 mb-3">Today's Schedule</h2>
+      <h2 className="mt-4 mb-3">Appointments Schedule</h2>
       
       <div className="row">
         {upcomingAppointments.map((appointment) => (
@@ -37,7 +37,7 @@ const ProviderDashboard = () => {
             <div className="card h-100 border-info">
               <div className="card-body">
                 <h6 className="card-subtitle mb-2 text-muted">{appointment.time}</h6>
-                <h5 className="card-title">{appointment.patient}</h5>
+                <h5 className="card-title">{appointment.doctor}</h5>
                 <p className="card-text">Reason: {appointment.reason}</p>
                 <button className="btn btn-sm btn-outline-info">
                   View Details
@@ -51,11 +51,11 @@ const ProviderDashboard = () => {
       {/* Quick Links */}
       <h2 className="mt-5 mb-3">Actions</h2>
       <div className="btn-group">
-        <button className="btn btn-success me-2">Add New Patient</button>
+        <button className="btn btn-success me-2">Add New appointment</button>
         <button className="btn btn-secondary">Review Notes</button>
       </div>
     </div>
   );
 };
 
-export default ProviderDashboard;
+export default PatientPortal;
