@@ -1,0 +1,9 @@
+POST http://localhost:4000/api/vitals/patients/6921981597927ab9fb29129c/vitals
+
+Content-Type: application/json
+
+{
+    "height": 170,
+    "weight": 60,
+    "bmi": 60
+}

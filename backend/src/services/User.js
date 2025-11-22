@@ -34,6 +34,10 @@ class UserService {
     updatePatientById(id, data) {
         return User.findByIdAndUpdate(id, data, { new: true });
     }
+
+    getPatientVitals(id) {
+        return User.findById(id).populate("vitals");
+    }
 }
 
 module.exports = new UserService();
