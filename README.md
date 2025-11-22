@@ -52,3 +52,11 @@ npm test
 ---
 
 That's it! Your application should now be running. 🚀
+
+
+<img width="1909" height="846" alt="image" src="https://github.com/user-attachments/assets/4ff6af5d-181f-49e3-970a-83fe1a95254d" />
+
+<img width="1658" height="803" alt="image" src="https://github.com/user-attachments/assets/8f5cf44d-9574-42e7-9a7e-70d5f99a7b76" />
+
+<img width="761" height="748" alt="image" src="https://github.com/user-attachments/assets/95d06f23-7398-4e5c-a17b-1e3c9f452d9d" />
+
